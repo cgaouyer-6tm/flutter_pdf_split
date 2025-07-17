@@ -4,19 +4,18 @@ version '1.0'
 buildscript {
     repositories {
         google()
-        jcenter()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.0'
+        classpath 'com.android.tools.build:gradle:8.5.2'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -25,7 +24,7 @@ apply plugin: 'com.android.library'
 android {
     namespace "com.example.flutter_pdf_split"
 
-    compileSdkVersion 34
+    compileSdk 35
 
     defaultConfig {
         minSdkVersion 19
@@ -36,5 +35,5 @@ android {
 }
 
 dependencies {
-    implementation 'com.tom-roush:pdfbox-android:1.8.10.3'
+    implementation 'com.tom-roush:pdfbox-android:2.0.27.0'
 }
