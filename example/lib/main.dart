@@ -1,11 +1,12 @@
 import 'dart:async';
+import 'dart:io';
+
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_pdf_split/flutter_pdf_split.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:device_info_plus/device_info_plus.dart';
-import 'dart:io';
 
 void main() {
   runApp(MyApp());
@@ -71,7 +72,7 @@ class _MyAppState extends State<MyApp> {
       return;
     }
 
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    FilePickerResult? result = await FilePicker.pickFiles();
 
     if (result != null) {
       PlatformFile file = result.files.first;
@@ -95,7 +96,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _openDirectoryExplorer() async {
-    String? directory = await FilePicker.platform.getDirectoryPath();
+    String? directory = await FilePicker.getDirectoryPath();
 
     if (directory != null) {
       debugPrint(directory);

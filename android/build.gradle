@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.2'
+        classpath 'com.android.tools.build:gradle:8.13.2'
     }
 }
 
@@ -24,7 +24,7 @@ apply plugin: 'com.android.library'
 android {
     namespace "com.example.flutter_pdf_split"
 
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         minSdkVersion 19
